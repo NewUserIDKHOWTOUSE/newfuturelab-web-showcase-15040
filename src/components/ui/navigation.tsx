@@ -1,0 +1,169 @@
+import { useState } from "react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "react-router-dom";
+
+export const Navigation = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const location = useLocation();
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setIsOpen(false);
+    }
+  };
+
+  const isActive = (path: string) => location.pathname === path;
+
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          <div className="flex items-center">
+            <Link to="/" className="text-2xl font-bold text-gradient hover:scale-105 transition-bounce">
+              GammaWeb
+            </Link>
+          </div>
+          
+          <div className="hidden md:block">
+            <div className="ml-10 flex items-center space-x-6">
+              <Link
+                to="/"
+                className={`px-3 py-2 text-sm font-medium transition-smooth ${
+                  isActive('/') ? 'text-gradient' : 'text-foreground hover:text-primary'
+                }`}
+              >
+                Home
+              </Link>
+              
+              <div className="relative group">
+                <button
+                  className="flex items-center px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-smooth"
+                  onMouseEnter={() => setServicesOpen(true)}
+                  onMouseLeave={() => setServicesOpen(false)}
+                >
+                  Diensten
+                  <ChevronDown className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" />
+                </button>
+                
+                {servicesOpen && (
+                  <div 
+                    className="absolute top-full left-0 mt-2 w-64 gradient-card border border-border/50 rounded-lg shadow-elegant z-50"
+                    onMouseEnter={() => setServicesOpen(true)}
+                    onMouseLeave={() => setServicesOpen(false)}
+                  >
+                    <div className="p-2">
+                      <Link
+                        to="/diensten/websites"
+                        className="block px-4 py-3 text-sm text-foreground hover:text-gradient hover:bg-primary/10 rounded-md transition-smooth"
+                      >
+                        <div className="font-medium">Website Ontwikkeling</div>
+                        <div className="text-xs text-muted-foreground">Custom websites & webshops</div>
+                      </Link>
+                      <Link
+                        to="/diensten/crm"
+                        className="block px-4 py-3 text-sm text-foreground hover:text-gradient hover:bg-primary/10 rounded-md transition-smooth"
+                      >
+                        <div className="font-medium">CRM Systemen</div>
+                        <div className="text-xs text-muted-foreground">Klantenbeheer oplossingen</div>
+                      </Link>
+                      <Link
+                        to="/diensten/seo"
+                        className="block px-4 py-3 text-sm text-foreground hover:text-gradient hover:bg-primary/10 rounded-md transition-smooth"
+                      >
+                        <div className="font-medium">SEO & Lead Generation</div>
+                        <div className="text-xs text-muted-foreground">Online zichtbaarheid & leads</div>
+                      </Link>
+                    </div>
+                  </div>
+                )}
+              </div>
+              
+              <Link
+                to="/over-ons"
+                className={`px-3 py-2 text-sm font-medium transition-smooth ${
+                  isActive('/over-ons') ? 'text-gradient' : 'text-foreground hover:text-primary'
+                }`}
+              >
+                Over Ons
+              </Link>
+              <Link
+                to="/contact"
+                className={`px-3 py-2 text-sm font-medium transition-smooth ${
+                  isActive('/contact') ? 'text-gradient' : 'text-foreground hover:text-primary'
+                }`}
+              >
+                Contact
+              </Link>
+            </div>
+          </div>
+          
+          <div className="md:hidden">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </Button>
+          </div>
+        </div>
+      </div>
+      
+      {isOpen && (
+        <div className="md:hidden">
+          <div className="px-2 pt-2 pb-3 space-y-1 gradient-card border-b border-border">
+            <Link
+              to="/"
+              className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-smooth"
+              onClick={() => setIsOpen(false)}
+            >
+              Home
+            </Link>
+            <div className="space-y-1">
+              <div className="px-3 py-2 text-base font-medium text-muted-foreground">Diensten</div>
+              <Link
+                to="/diensten/websites"
+                className="block px-6 py-2 text-sm text-foreground hover:text-primary transition-smooth"
+                onClick={() => setIsOpen(false)}
+              >
+                Website Ontwikkeling
+              </Link>
+              <Link
+                to="/diensten/crm"
+                className="block px-6 py-2 text-sm text-foreground hover:text-primary transition-smooth"
+                onClick={() => setIsOpen(false)}
+              >
+                CRM Systemen
+              </Link>
+              <Link
+                to="/diensten/seo"
+                className="block px-6 py-2 text-sm text-foreground hover:text-primary transition-smooth"
+                onClick={() => setIsOpen(false)}
+              >
+                SEO & Lead Generation
+              </Link>
+            </div>
+            <Link
+              to="/over-ons"
+              className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-smooth"
+              onClick={() => setIsOpen(false)}
+            >
+              Over Ons
+            </Link>
+            <Link
+              to="/contact"
+              className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-smooth"
+              onClick={() => setIsOpen(false)}
+            >
+              Contact
+            </Link>
+          </div>
+        </div>
+      )}
+    </nav>
+  );
+};
