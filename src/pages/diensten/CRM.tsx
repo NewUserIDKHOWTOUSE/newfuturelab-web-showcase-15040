@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Users, Database, BarChart3, Mail, Calendar, Phone, FileText, Settings } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ExamplesSection } from "@/components/ExamplesSection";
 
 const crmFeatures = [
   {
@@ -53,6 +54,57 @@ const crmFeatures = [
     title: "Workflow Automatisering",
     description: "Automatiseer repetitieve taken en optimaliseer uw werkprocessen.",
     features: ["Custom workflows", "Triggers & acties", "Integraties", "Process optimization"]
+  }
+];
+
+const crmExamples = [
+  {
+    title: "Real Estate Agency CRM",
+    description: "Custom CRM system for real estate agency managing 500+ properties and 2000+ client relationships.",
+    results: [
+      "Sales cycle reduced by 30%",
+      "Lead response time cut from 4 hours to 15 minutes",
+      "Client retention increased by 40%",
+      "Agent productivity up 50%"
+    ],
+    industry: "Real Estate",
+    tags: ["Custom CRM", "Pipeline", "Automation", "Integration"]
+  },
+  {
+    title: "Manufacturing Sales CRM",
+    description: "B2B CRM implementation for manufacturing company with complex sales cycles and multiple stakeholders.",
+    results: [
+      "Deal closure rate improved by 35%",
+      "Sales forecast accuracy: 95%",
+      "Quote generation time reduced by 75%",
+      "Revenue increased by €2.5M annually"
+    ],
+    industry: "Manufacturing",
+    tags: ["B2B", "Salesforce", "Quotes", "Analytics"]
+  },
+  {
+    title: "Healthcare Patient Management",
+    description: "Specialized CRM for healthcare clinic managing patient relationships, appointments, and follow-ups.",
+    results: [
+      "No-show rate reduced by 60%",
+      "Patient satisfaction score: 4.9/5",
+      "Administrative time saved: 15 hours/week",
+      "Follow-up completion rate: 98%"
+    ],
+    industry: "Healthcare",
+    tags: ["Patient Management", "Appointments", "HIPAA", "Reminders"]
+  },
+  {
+    title: "Financial Services Client Portal",
+    description: "CRM with client portal for financial advisory firm managing high-net-worth client relationships.",
+    results: [
+      "Client communication efficiency up 70%",
+      "Document processing time reduced by 80%",
+      "Client onboarding time cut by 50%",
+      "Compliance tracking: 100% accurate"
+    ],
+    industry: "Financial Services",
+    tags: ["Client Portal", "Security", "Compliance", "Documents"]
   }
 ];
 
@@ -198,6 +250,13 @@ const CRMPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Examples Section */}
+      <ExamplesSection 
+        examples={crmExamples}
+        title="CRM"
+        subtitle="Implementaties"
+      />
 
       {/* CTA Section */}
       <section className="py-20 gradient-hero">

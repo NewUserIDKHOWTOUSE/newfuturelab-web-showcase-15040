@@ -1,12 +1,14 @@
 import { useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const location = useLocation();
+  const { language, setLanguage, t } = useLanguage();
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -36,7 +38,7 @@ export const Navigation = () => {
                   isActive('/') ? 'text-gradient' : 'text-foreground hover:text-primary'
                 }`}
               >
-                Home
+                {t('nav.home')}
               </Link>
               
               <div className="relative group">
@@ -45,7 +47,7 @@ export const Navigation = () => {
                   onMouseEnter={() => setServicesOpen(true)}
                   onMouseLeave={() => setServicesOpen(false)}
                 >
-                  Diensten
+                  {t('nav.services')}
                   <ChevronDown className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" />
                 </button>
                 
@@ -88,7 +90,7 @@ export const Navigation = () => {
                   isActive('/over-ons') ? 'text-gradient' : 'text-foreground hover:text-primary'
                 }`}
               >
-                Over Ons
+                {t('nav.about')}
               </Link>
               <Link
                 to="/contact"
@@ -96,8 +98,18 @@ export const Navigation = () => {
                   isActive('/contact') ? 'text-gradient' : 'text-foreground hover:text-primary'
                 }`}
               >
-                Contact
+                {t('nav.contact')}
               </Link>
+              
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setLanguage(language === 'nl' ? 'en' : 'nl')}
+                className="flex items-center gap-2"
+              >
+                <Languages className="h-4 w-4" />
+                {language === 'nl' ? 'EN' : 'NL'}
+              </Button>
             </div>
           </div>
           
@@ -161,6 +173,18 @@ export const Navigation = () => {
             >
               Contact
             </Link>
+            
+            <div className="px-3 py-2">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setLanguage(language === 'nl' ? 'en' : 'nl')}
+                className="w-full flex items-center justify-center gap-2"
+              >
+                <Languages className="h-4 w-4" />
+                {language === 'nl' ? 'Switch to English' : 'Schakel naar Nederlands'}
+              </Button>
+            </div>
           </div>
         </div>
       )}

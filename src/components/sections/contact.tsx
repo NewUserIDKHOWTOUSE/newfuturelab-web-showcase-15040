@@ -6,6 +6,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -14,16 +16,18 @@ export const ContactSection = () => {
     company: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const { t } = useLanguage();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Simple validation
     if (!formData.name || !formData.email || !formData.message) {
       toast({
-        title: "Vereiste velden ontbreken",
-        description: "Vul alle verplichte velden in.",
+        title: t('contact.form.error'),
+        description: t('contact.form.errorDesc'),
         variant: "destructive"
       });
       return;
@@ -33,28 +37,44 @@ export const ContactSection = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       toast({
-        title: "Ongeldig e-mailadres",
-        description: "Voer een geldig e-mailadres in.",
+        title: t('contact.form.emailError'),
+        description: t('contact.form.emailErrorDesc'),
         variant: "destructive"
       });
       return;
     }
 
-    // Here you would typically send the form data to a server
-    console.log("Form submitted:", formData);
-    
-    toast({
-      title: "Bericht verzonden!",
-      description: "Wij nemen zo snel mogelijk contact met u op."
-    });
-    
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      company: "",
-      message: ""
-    });
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: t('contact.form.success'),
+        description: t('contact.form.successDesc')
+      });
+      
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      toast({
+        title: "Er is iets misgegaan",
+        description: "Probeer het later opnieuw of neem direct contact met ons op.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -69,11 +89,10 @@ export const ContactSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Neem <span className="text-gradient">Contact</span> Op
+            {t('contact.title')} <span className="text-gradient">{t('contact.titleHighlight')}</span> {t('contact.subtitle')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Klaar om uw project te starten? Neem contact met ons op voor een vrijblijvend gesprek 
-            over uw digitale ambities.
+            {t('contact.description')}
           </p>
         </div>
         
@@ -83,28 +102,28 @@ export const ContactSection = () => {
             <Card className="gradient-card border-border/50">
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-foreground">
-                  Contactgegevens
+                  {t('contact.info')}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="flex items-center space-x-4">
                   <Mail className="h-6 w-6 text-primary" />
                   <div>
-                    <p className="font-medium text-foreground">E-mail</p>
+                    <p className="font-medium text-foreground">{t('contact.email')}</p>
                     <p className="text-muted-foreground">info@newfuturelab.nl</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
                   <Phone className="h-6 w-6 text-primary" />
                   <div>
-                    <p className="font-medium text-foreground">Telefoon</p>
+                    <p className="font-medium text-foreground">{t('contact.phone')}</p>
                     <p className="text-muted-foreground">+31 (0)20 123 4567</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
                   <MapPin className="h-6 w-6 text-primary" />
                   <div>
-                    <p className="font-medium text-foreground">Adres</p>
+                    <p className="font-medium text-foreground">{t('contact.address')}</p>
                     <p className="text-muted-foreground">
                       Technologielaan 123<br />
                       1234 AB Amsterdam
@@ -116,24 +135,24 @@ export const ContactSection = () => {
             
             <div className="gradient-card p-6 rounded-lg border border-border/50">
               <h3 className="text-xl font-bold text-foreground mb-4">
-                Waarom kiezen voor ons?
+                {t('contact.why.title')}
               </h3>
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex items-start space-x-2">
                   <span className="text-primary">•</span>
-                  <span>Gratis consultatie en projectadvies</span>
+                  <span>{t('contact.why.1')}</span>
                 </li>
                 <li className="flex items-start space-x-2">
                   <span className="text-primary">•</span>
-                  <span>Transparante communicatie tijdens het hele proces</span>
+                  <span>{t('contact.why.2')}</span>
                 </li>
                 <li className="flex items-start space-x-2">
                   <span className="text-primary">•</span>
-                  <span>Onderhoud en support na oplevering</span>
+                  <span>{t('contact.why.3')}</span>
                 </li>
                 <li className="flex items-start space-x-2">
                   <span className="text-primary">•</span>
-                  <span>Concurrerende prijzen met hoogste kwaliteit</span>
+                  <span>{t('contact.why.4')}</span>
                 </li>
               </ul>
             </div>
@@ -143,7 +162,7 @@ export const ContactSection = () => {
           <Card className="gradient-card border-border/50 shadow-card">
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground">
-                Stuur ons een bericht
+                {t('contact.form.title')}
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -151,7 +170,7 @@ export const ContactSection = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="name" className="text-foreground">
-                      Naam *
+                      {t('contact.form.name')} *
                     </Label>
                     <Input
                       id="name"
@@ -165,7 +184,7 @@ export const ContactSection = () => {
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="email" className="text-foreground">
-                      E-mail *
+                      {t('contact.form.email')} *
                     </Label>
                     <Input
                       id="email"
@@ -181,7 +200,7 @@ export const ContactSection = () => {
                 
                 <div className="space-y-2">
                   <Label htmlFor="company" className="text-foreground">
-                    Bedrijf
+                    {t('contact.form.company')}
                   </Label>
                   <Input
                     id="company"
@@ -195,7 +214,7 @@ export const ContactSection = () => {
                 
                 <div className="space-y-2">
                   <Label htmlFor="message" className="text-foreground">
-                    Bericht *
+                    {t('contact.form.message')} *
                   </Label>
                   <Textarea
                     id="message"
@@ -204,7 +223,7 @@ export const ContactSection = () => {
                     onChange={handleChange}
                     rows={5}
                     className="bg-secondary border-border focus:border-primary resize-none"
-                    placeholder="Vertel ons over uw project..."
+                    placeholder={t('contact.form.placeholder')}
                     required
                   />
                 </div>
@@ -212,9 +231,10 @@ export const ContactSection = () => {
                 <Button 
                   type="submit" 
                   className="w-full gradient-primary text-primary-foreground hover:opacity-90 transition-smooth shadow-glow"
+                  disabled={isSubmitting}
                 >
                   <Send className="w-4 h-4 mr-2" />
-                  Verstuur Bericht
+                  {isSubmitting ? t('contact.form.sending') : t('contact.form.submit')}
                 </Button>
               </form>
             </CardContent>
