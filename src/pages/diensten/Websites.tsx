@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Globe, ShoppingCart, Smartphone, Monitor, Zap, Palette, Code, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ExamplesSection } from "@/components/ExamplesSection";
 
 const websiteServices = [
   {
@@ -53,6 +54,57 @@ const websiteServices = [
     title: "Beveiliging & Onderhoud",
     description: "Veilige websites met doorlopend onderhoud en regelmatige updates.",
     features: ["SSL certificaten", "Backup systemen", "Security monitoring", "Regelmatige updates"]
+  }
+];
+
+const websiteExamples = [
+  {
+    title: "E-commerce Fashion Boutique",
+    description: "Modern online fashion store with 5000+ products, integrated inventory management, and multi-currency support.",
+    results: [
+      "200% increase in online sales within 6 months",
+      "Mobile conversion rate improved by 150%",
+      "Page load time reduced to under 2 seconds",
+      "Automated email marketing increased repeat customers by 45%"
+    ],
+    industry: "Fashion & Retail",
+    tags: ["E-commerce", "WooCommerce", "Payment Gateway", "Inventory"]
+  },
+  {
+    title: "SaaS Platform Dashboard",
+    description: "Complex web application for project management with real-time collaboration, analytics, and integrations.",
+    results: [
+      "10,000+ active users within first year",
+      "99.9% uptime achieved",
+      "User engagement time increased 3x",
+      "Customer churn reduced by 35%"
+    ],
+    industry: "Technology & Software",
+    tags: ["React", "API", "Real-time", "Analytics"]
+  },
+  {
+    title: "Healthcare Clinic Portal",
+    description: "Patient portal with appointment booking, medical records access, and telemedicine capabilities.",
+    results: [
+      "70% reduction in administrative calls",
+      "Online appointments increased by 250%",
+      "Patient satisfaction score: 4.8/5",
+      "HIPAA compliant security implemented"
+    ],
+    industry: "Healthcare",
+    tags: ["Portal", "Security", "Booking System", "HIPAA"]
+  },
+  {
+    title: "Restaurant Multi-location Website",
+    description: "Website for restaurant chain with online ordering, table reservations, and loyalty program integration.",
+    results: [
+      "40% of orders now placed online",
+      "Table booking rate up 180%",
+      "Loyalty program membership doubled",
+      "Average order value increased by 25%"
+    ],
+    industry: "Food & Beverage",
+    tags: ["Online Ordering", "Reservations", "Menu", "Mobile"]
   }
 ];
 
@@ -156,6 +208,13 @@ const WebsitesPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Examples Section */}
+      <ExamplesSection 
+        examples={websiteExamples}
+        title="Voorbeelden van Onze"
+        subtitle="Projecten"
+      />
 
       {/* CTA Section */}
       <section className="py-20 bg-background">

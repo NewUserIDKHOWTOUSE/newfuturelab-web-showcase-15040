@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Search, TrendingUp, Target, FileText, BarChart, Users, Globe, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ExamplesSection } from "@/components/ExamplesSection";
 
 const seoServices = [
   {
@@ -53,6 +54,57 @@ const seoServices = [
     title: "SEO Automation",
     description: "Geautomatiseerde SEO processen voor efficiënte en consistente optimalisatie.",
     features: ["Automated reporting", "Rank tracking", "Technical monitoring", "Alert systemen"]
+  }
+];
+
+const seoExamples = [
+  {
+    title: "Local Law Firm SEO Campaign",
+    description: "Complete SEO overhaul for a regional law firm targeting personal injury and family law keywords.",
+    results: [
+      "Rankings: 15 keywords in top 3 within 4 months",
+      "Organic traffic increased by 320%",
+      "Lead generation up 180%",
+      "Cost per lead reduced by 55%"
+    ],
+    industry: "Legal Services",
+    tags: ["Local SEO", "Content Marketing", "Link Building", "GMB"]
+  },
+  {
+    title: "E-commerce SEO - Home Decor",
+    description: "SEO strategy for online home decor store with 2000+ products competing in saturated market.",
+    results: [
+      "Organic revenue increased by 450%",
+      "Product pages ranking for 500+ keywords",
+      "Category pages in top 5 for main terms",
+      "ROI: 8:1 within 8 months"
+    ],
+    industry: "E-commerce & Retail",
+    tags: ["Product SEO", "Schema Markup", "Technical SEO", "Content"]
+  },
+  {
+    title: "B2B SaaS Lead Generation",
+    description: "Comprehensive SEO and content strategy for project management SaaS targeting enterprise clients.",
+    results: [
+      "Monthly qualified leads increased from 50 to 400",
+      "Organic traffic: 15,000+ monthly visitors",
+      "Featured snippets for 25 high-value queries",
+      "Domain authority increased from 28 to 52"
+    ],
+    industry: "Technology & Software",
+    tags: ["Content Strategy", "Lead Gen", "Technical SEO", "Authority"]
+  },
+  {
+    title: "Medical Practice Local Domination",
+    description: "Local SEO campaign for dental practice aiming to dominate local search in competitive area.",
+    results: [
+      "Google Maps: #1 position in service area",
+      "New patient calls up 240%",
+      "5-star reviews increased from 15 to 120+",
+      "Local pack visibility: 95% for target keywords"
+    ],
+    industry: "Healthcare",
+    tags: ["Local SEO", "Review Management", "GMB", "Citations"]
   }
 ];
 
@@ -229,6 +281,13 @@ const SEOPage = () => {
           </div>
         </div>
       </section>
+
+      {/* Examples Section */}
+      <ExamplesSection 
+        examples={seoExamples}
+        title="Succesvolle"
+        subtitle="Cases"
+      />
 
       {/* CTA Section */}
       <section className="py-20 bg-background">
