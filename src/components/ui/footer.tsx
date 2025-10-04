@@ -1,29 +1,30 @@
 import { Mail, Phone, MapPin } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export const Footer = () => {
+  const { t } = useLanguage();
   return (
     <footer className="bg-secondary py-12 border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold text-gradient mb-4">NewFutureLab</h3>
+            <h3 className="text-xl font-bold text-gradient mb-4">{t('footer.company')}</h3>
             <p className="text-muted-foreground mb-4">
-              Innovatieve webontwikkeling voor de toekomst. Wij transformeren uw digitale visie 
-              tot werkelijkheid met cutting-edge technologie en creatieve oplossingen.
+              {t('footer.description')}
             </p>
           </div>
           
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold text-foreground mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold text-foreground mb-4">{t('footer.quickLinks')}</h4>
             <ul className="space-y-2">
               <li>
                 <button 
                   onClick={() => document.getElementById("home")?.scrollIntoView({ behavior: "smooth" })}
                   className="text-muted-foreground hover:text-primary transition-smooth"
                 >
-                  Home
+                  {t('footer.home')}
                 </button>
               </li>
               <li>
@@ -31,7 +32,7 @@ export const Footer = () => {
                   onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
                   className="text-muted-foreground hover:text-primary transition-smooth"
                 >
-                  Diensten
+                  {t('footer.services')}
                 </button>
               </li>
               <li>
@@ -39,7 +40,7 @@ export const Footer = () => {
                   onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
                   className="text-muted-foreground hover:text-primary transition-smooth"
                 >
-                  Over Ons
+                  {t('footer.about')}
                 </button>
               </li>
               <li>
@@ -47,7 +48,7 @@ export const Footer = () => {
                   onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
                   className="text-muted-foreground hover:text-primary transition-smooth"
                 >
-                  Contact
+                  {t('footer.contact')}
                 </button>
               </li>
             </ul>
@@ -55,7 +56,7 @@ export const Footer = () => {
           
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold text-foreground mb-4">Contact Info</h4>
+            <h4 className="text-lg font-semibold text-foreground mb-4">{t('footer.contactInfo')}</h4>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-primary" />
@@ -77,7 +78,7 @@ export const Footer = () => {
         
         <div className="border-t border-border mt-8 pt-8 text-center">
           <p className="text-muted-foreground">
-            © 2024 NewFutureLab. Alle rechten voorbehouden.
+            {t('footer.copyright')}
           </p>
         </div>
       </div>

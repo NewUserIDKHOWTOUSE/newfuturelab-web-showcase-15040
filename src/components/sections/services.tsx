@@ -14,85 +14,87 @@ import {
   Palette 
 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-
-const services = [
-  {
-    icon: Globe,
-    title: "Custom Website Development",
-    description: "Op maat gemaakte websites die perfect aansluiten bij uw bedrijfsbehoeften."
-  },
-  {
-    icon: ShoppingCart,
-    title: "E-commerce Development",
-    description: "Krachtige online winkels met geïntegreerde betalingssystemen en inventarisbeheer."
-  },
-  {
-    icon: FileText,
-    title: "CMS Development",
-    description: "Gebruiksvriendelijke content management systemen voor eenvoudig beheer van uw website."
-  },
-  {
-    icon: Monitor,
-    title: "Frontend Development",
-    description: "Moderne, interactieve gebruikersinterfaces met de nieuwste technologieën."
-  },
-  {
-    icon: Server,
-    title: "Backend Development",
-    description: "Robuuste server-side oplossingen voor complexe bedrijfsprocessen."
-  },
-  {
-    icon: Layers,
-    title: "Full-Stack Development",
-    description: "Complete weboplossingen van database tot gebruikersinterface."
-  },
-  {
-    icon: Smartphone,
-    title: "Responsive Design",
-    description: "Websites die perfect werken op alle apparaten en schermformaten."
-  },
-  {
-    icon: Zap,
-    title: "Web App Development",
-    description: "Krachtige web applicaties voor uw specifieke bedrijfsprocessen."
-  },
-  {
-    icon: Link,
-    title: "API Integration",
-    description: "Naadloze integratie met externe diensten en systemen."
-  },
-  {
-    icon: Search,
-    title: "SEO Optimization",
-    description: "Optimalisatie voor zoekmachines om uw online zichtbaarheid te vergroten."
-  },
-  {
-    icon: Shield,
-    title: "Security Features",
-    description: "Geavanceerde beveiligingsmaatregelen om uw data en gebruikers te beschermen."
-  },
-  {
-    icon: Settings,
-    title: "Maintenance Services",
-    description: "Doorlopend onderhoud en updates om uw website optimaal te laten functioneren."
-  },
-  {
-    icon: Palette,
-    title: "UI/UX Design",
-    description: "Intuïtieve en aantrekkelijke designs die gebruikers een geweldige ervaring bieden."
-  }
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export const ServicesSection = () => {
+  const { t } = useLanguage();
+  
+  const services = [
+    {
+      icon: Globe,
+      titleKey: "service.customWebsite",
+      descKey: "service.customWebsiteDesc"
+    },
+    {
+      icon: ShoppingCart,
+      titleKey: "service.ecommerce",
+      descKey: "service.ecommerceDesc"
+    },
+    {
+      icon: FileText,
+      titleKey: "service.cms",
+      descKey: "service.cmsDesc"
+    },
+    {
+      icon: Monitor,
+      titleKey: "service.frontend",
+      descKey: "service.frontendDesc"
+    },
+    {
+      icon: Server,
+      titleKey: "service.backend",
+      descKey: "service.backendDesc"
+    },
+    {
+      icon: Layers,
+      titleKey: "service.fullstack",
+      descKey: "service.fullstackDesc"
+    },
+    {
+      icon: Smartphone,
+      titleKey: "service.responsive",
+      descKey: "service.responsiveDesc"
+    },
+    {
+      icon: Zap,
+      titleKey: "service.webapp",
+      descKey: "service.webappDesc"
+    },
+    {
+      icon: Link,
+      titleKey: "service.api",
+      descKey: "service.apiDesc"
+    },
+    {
+      icon: Search,
+      titleKey: "service.seo",
+      descKey: "service.seoDesc"
+    },
+    {
+      icon: Shield,
+      titleKey: "service.security",
+      descKey: "service.securityDesc"
+    },
+    {
+      icon: Settings,
+      titleKey: "service.maintenance",
+      descKey: "service.maintenanceDesc"
+    },
+    {
+      icon: Palette,
+      titleKey: "service.uiux",
+      descKey: "service.uiuxDesc"
+    }
+  ];
   return (
     <section id="services" className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Onze <span className="text-gradient">Diensten</span>
+            {t('services.title')} <span className="text-gradient">{t('services.titleHighlight')}</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Wij bieden een volledig scala aan webontwikkelingsdiensten om uw digitale ambities waar te maken.
+            {t('services.description')}
           </p>
         </div>
         
@@ -107,12 +109,12 @@ export const ServicesSection = () => {
                   <service.icon className="h-12 w-12 text-primary group-hover:text-accent transition-smooth" />
                 </div>
                 <CardTitle className="text-lg font-semibold text-foreground group-hover:text-primary transition-smooth">
-                  {service.title}
+                  {t(service.titleKey)}
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-center">
                 <CardDescription className="text-muted-foreground">
-                  {service.description}
+                  {t(service.descKey)}
                 </CardDescription>
               </CardContent>
             </Card>

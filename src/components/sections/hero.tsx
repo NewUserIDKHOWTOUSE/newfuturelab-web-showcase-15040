@@ -1,7 +1,10 @@
 import { ArrowRight, Code, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export const HeroSection = () => {
+  const { t } = useLanguage();
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -21,12 +24,11 @@ export const HeroSection = () => {
           </div>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-            <span className="text-gradient">GammaWeb</span>
+            <span className="text-gradient">{t('hero.company')}</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Wij ontwikkelen innovatieve weboplossingen die uw bedrijf naar het volgende niveau tillen. 
-            Van custom websites tot complexe web applicaties.
+            {t('hero.description')}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -35,7 +37,7 @@ export const HeroSection = () => {
               className="gradient-primary text-primary-foreground hover:opacity-90 transition-smooth shadow-glow px-8 py-3"
               onClick={() => scrollToSection("services")}
             >
-              Bekijk Onze Diensten
+              {t('hero.viewServices')}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             
@@ -45,7 +47,7 @@ export const HeroSection = () => {
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-smooth px-8 py-3"
               onClick={() => scrollToSection("contact")}
             >
-              Contact Opnemen
+              {t('hero.contactUs')}
             </Button>
           </div>
         </div>
