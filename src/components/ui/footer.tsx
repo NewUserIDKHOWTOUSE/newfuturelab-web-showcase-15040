@@ -77,8 +77,11 @@ export const Footer = () => {
         </div>
         
         <div className="border-t border-border mt-8 pt-8 text-center">
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground mb-2">
             {t('footer.copyright')}
+          </p>
+          <p className="text-sm text-muted-foreground">
+            {t('footer.kvk')}: 95151974
           </p>
         </div>
       </div>

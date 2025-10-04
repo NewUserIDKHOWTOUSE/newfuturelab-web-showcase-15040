@@ -62,22 +62,22 @@ export const Navigation = () => {
                         to="/diensten/websites"
                         className="block px-4 py-3 text-sm text-foreground hover:text-gradient hover:bg-primary/10 rounded-md transition-smooth"
                       >
-                        <div className="font-medium">Website Ontwikkeling</div>
-                        <div className="text-xs text-muted-foreground">Custom websites & webshops</div>
+                        <div className="font-medium">{t('servicesDropdown.websites.title')}</div>
+                        <div className="text-xs text-muted-foreground">{t('servicesDropdown.websites.description')}</div>
                       </Link>
                       <Link
                         to="/diensten/crm"
                         className="block px-4 py-3 text-sm text-foreground hover:text-gradient hover:bg-primary/10 rounded-md transition-smooth"
                       >
-                        <div className="font-medium">CRM Systemen</div>
-                        <div className="text-xs text-muted-foreground">Klantenbeheer oplossingen</div>
+                        <div className="font-medium">{t('servicesDropdown.crm.title')}</div>
+                        <div className="text-xs text-muted-foreground">{t('servicesDropdown.crm.description')}</div>
                       </Link>
                       <Link
                         to="/diensten/seo"
                         className="block px-4 py-3 text-sm text-foreground hover:text-gradient hover:bg-primary/10 rounded-md transition-smooth"
                       >
-                        <div className="font-medium">SEO & Lead Generation</div>
-                        <div className="text-xs text-muted-foreground">Online zichtbaarheid & leads</div>
+                        <div className="font-medium">{t('servicesDropdown.seo.title')}</div>
+                        <div className="text-xs text-muted-foreground">{t('servicesDropdown.seo.description')}</div>
                       </Link>
                     </div>
                   </div>
@@ -133,30 +133,30 @@ export const Navigation = () => {
               className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-smooth"
               onClick={() => setIsOpen(false)}
             >
-              Home
+              {t('nav.home')}
             </Link>
             <div className="space-y-1">
-              <div className="px-3 py-2 text-base font-medium text-muted-foreground">Diensten</div>
+              <div className="px-3 py-2 text-base font-medium text-muted-foreground">{t('nav.services')}</div>
               <Link
                 to="/diensten/websites"
                 className="block px-6 py-2 text-sm text-foreground hover:text-primary transition-smooth"
                 onClick={() => setIsOpen(false)}
               >
-                Website Ontwikkeling
+                {t('servicesDropdown.websites.title')}
               </Link>
               <Link
                 to="/diensten/crm"
                 className="block px-6 py-2 text-sm text-foreground hover:text-primary transition-smooth"
                 onClick={() => setIsOpen(false)}
               >
-                CRM Systemen
+                {t('servicesDropdown.crm.title')}
               </Link>
               <Link
                 to="/diensten/seo"
                 className="block px-6 py-2 text-sm text-foreground hover:text-primary transition-smooth"
                 onClick={() => setIsOpen(false)}
               >
-                SEO & Lead Generation
+                {t('servicesDropdown.seo.title')}
               </Link>
             </div>
             <Link
@@ -164,14 +164,14 @@ export const Navigation = () => {
               className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-smooth"
               onClick={() => setIsOpen(false)}
             >
-              Over Ons
+              {t('nav.about')}
             </Link>
             <Link
               to="/contact"
               className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-smooth"
               onClick={() => setIsOpen(false)}
             >
-              Contact
+              {t('nav.contact')}
             </Link>
             
             <div className="px-3 py-2">

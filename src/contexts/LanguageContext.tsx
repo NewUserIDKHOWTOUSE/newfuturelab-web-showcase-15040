@@ -83,7 +83,16 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.about': 'Over Ons',
     'footer.contact': 'Contact',
     'footer.contactInfo': 'Contact Info',
+    'footer.kvk': 'KVK',
     'footer.copyright': '© 2024 NewFutureLab. Alle rechten voorbehouden.',
+    
+    // Services Dropdown
+    'servicesDropdown.websites.title': 'Website Ontwikkeling',
+    'servicesDropdown.websites.description': 'Custom websites & webshops',
+    'servicesDropdown.crm.title': 'CRM Systemen',
+    'servicesDropdown.crm.description': 'Klantenbeheer oplossingen',
+    'servicesDropdown.seo.title': 'SEO & Lead Generation',
+    'servicesDropdown.seo.description': 'Online zichtbaarheid & leads',
     
     // Contact
     'contact.title': 'Neem',
@@ -232,7 +241,16 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.about': 'About Us',
     'footer.contact': 'Contact',
     'footer.contactInfo': 'Contact Info',
+    'footer.kvk': 'Chamber of Commerce',
     'footer.copyright': '© 2024 NewFutureLab. All rights reserved.',
+    
+    // Services Dropdown
+    'servicesDropdown.websites.title': 'Website Development',
+    'servicesDropdown.websites.description': 'Custom websites & web shops',
+    'servicesDropdown.crm.title': 'CRM Systems',
+    'servicesDropdown.crm.description': 'Customer management solutions',
+    'servicesDropdown.seo.title': 'SEO & Lead Generation',
+    'servicesDropdown.seo.description': 'Online visibility & leads',
     
     // Contact
     'contact.title': 'Get in',
