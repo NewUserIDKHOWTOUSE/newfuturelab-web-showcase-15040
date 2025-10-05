@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X, ChevronDown, Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -65,20 +66,27 @@ export const Navigation = () => {
                         <div className="font-medium">{t('servicesDropdown.websites.title')}</div>
                         <div className="text-xs text-muted-foreground">{t('servicesDropdown.websites.description')}</div>
                       </Link>
-                      <Link
-                        to="/diensten/crm"
-                        className="block px-4 py-3 text-sm text-foreground hover:text-gradient hover:bg-primary/10 rounded-md transition-smooth"
-                      >
-                        <div className="font-medium">{t('servicesDropdown.crm.title')}</div>
+                      <div className="block px-4 py-3 text-sm text-foreground opacity-60 cursor-not-allowed rounded-md">
+                        <div className="flex items-center justify-between font-medium">
+                          {t('servicesDropdown.crm.title')}
+                          <Badge variant="secondary" className="ml-2 text-xs">Coming Soon</Badge>
+                        </div>
                         <div className="text-xs text-muted-foreground">{t('servicesDropdown.crm.description')}</div>
-                      </Link>
-                      <Link
-                        to="/diensten/seo"
-                        className="block px-4 py-3 text-sm text-foreground hover:text-gradient hover:bg-primary/10 rounded-md transition-smooth"
-                      >
-                        <div className="font-medium">{t('servicesDropdown.seo.title')}</div>
+                      </div>
+                      <div className="block px-4 py-3 text-sm text-foreground opacity-60 cursor-not-allowed rounded-md">
+                        <div className="flex items-center justify-between font-medium">
+                          {t('servicesDropdown.seo.title')}
+                          <Badge variant="secondary" className="ml-2 text-xs">Coming Soon</Badge>
+                        </div>
                         <div className="text-xs text-muted-foreground">{t('servicesDropdown.seo.description')}</div>
-                      </Link>
+                      </div>
+                      <div className="block px-4 py-3 text-sm text-foreground opacity-60 cursor-not-allowed rounded-md">
+                        <div className="flex items-center justify-between font-medium">
+                          Lead Generation
+                          <Badge variant="secondary" className="ml-2 text-xs">Coming Soon</Badge>
+                        </div>
+                        <div className="text-xs text-muted-foreground">Genereer kwalitatieve leads voor uw bedrijf</div>
+                      </div>
                     </div>
                   </div>
                 )}
@@ -144,20 +152,24 @@ export const Navigation = () => {
               >
                 {t('servicesDropdown.websites.title')}
               </Link>
-              <Link
-                to="/diensten/crm"
-                className="block px-6 py-2 text-sm text-foreground hover:text-primary transition-smooth"
-                onClick={() => setIsOpen(false)}
-              >
-                {t('servicesDropdown.crm.title')}
-              </Link>
-              <Link
-                to="/diensten/seo"
-                className="block px-6 py-2 text-sm text-foreground hover:text-primary transition-smooth"
-                onClick={() => setIsOpen(false)}
-              >
-                {t('servicesDropdown.seo.title')}
-              </Link>
+              <div className="block px-6 py-2 text-sm text-foreground opacity-60 cursor-not-allowed">
+                <span className="flex items-center gap-2">
+                  {t('servicesDropdown.crm.title')}
+                  <Badge variant="secondary" className="text-xs">Coming Soon</Badge>
+                </span>
+              </div>
+              <div className="block px-6 py-2 text-sm text-foreground opacity-60 cursor-not-allowed">
+                <span className="flex items-center gap-2">
+                  {t('servicesDropdown.seo.title')}
+                  <Badge variant="secondary" className="text-xs">Coming Soon</Badge>
+                </span>
+              </div>
+              <div className="block px-6 py-2 text-sm text-foreground opacity-60 cursor-not-allowed">
+                <span className="flex items-center gap-2">
+                  Lead Generation
+                  <Badge variant="secondary" className="text-xs">Coming Soon</Badge>
+                </span>
+              </div>
             </div>
             <Link
               to="/over-ons"
