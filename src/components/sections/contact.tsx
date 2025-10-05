@@ -110,7 +110,7 @@ export const ContactSection = () => {
                   <Mail className="h-6 w-6 text-primary" />
                   <div>
                     <p className="font-medium text-foreground">{t('contact.email')}</p>
-                    <p className="text-muted-foreground">info@newfuturelab.nl</p>
+                    <p className="text-muted-foreground">info@jaysolutions.nl</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">

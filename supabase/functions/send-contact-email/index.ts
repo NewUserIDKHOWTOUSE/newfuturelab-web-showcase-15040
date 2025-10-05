@@ -49,7 +49,7 @@ const handler = async (req: Request): Promise<Response> => {
               <p><strong>Bericht:</strong></p>
               <p style="white-space: pre-wrap;">${message}</p>
             </div>
-            <p style="color: #6b7280; font-size: 14px;">Dit bericht is verzonden via het contactformulier op newfuturelab.nl</p>
+            <p style="color: #6b7280; font-size: 14px;">Dit bericht is verzonden via het contactformulier op jaysolutions.nl</p>
           </div>
         `,
       })
@@ -80,10 +80,10 @@ const handler = async (req: Request): Promise<Response> => {
             <p>Met vriendelijke groet,<br>Het New Future Lab Team</p>
             <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;">
             <p style="color: #6b7280; font-size: 12px;">
-              New Future Lab<br>
+              JaySolutions<br>
               Technologielaan 123<br>
               1234 AB Amsterdam<br>
-              info@newfuturelab.nl
+              info@jaysolutions.nl
             </p>
           </div>
         `,

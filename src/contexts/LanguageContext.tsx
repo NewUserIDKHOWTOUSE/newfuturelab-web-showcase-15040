@@ -75,7 +75,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.whyDesc2': 'Ons team bestaat uit specialisten in frontend, backend, UI/UX design en DevOps. Samen zorgen wij ervoor dat uw project niet alleen technisch perfect is, maar ook gebruiksvriendelijk en toekomstbestendig.',
     
     // Footer
-    'footer.company': 'NewFutureLab',
+    'footer.company': 'JaySolutions',
     'footer.description': 'Innovatieve webontwikkeling voor de toekomst. Wij transformeren uw digitale visie tot werkelijkheid met cutting-edge technologie en creatieve oplossingen.',
     'footer.quickLinks': 'Quick Links',
     'footer.home': 'Home',
@@ -84,7 +84,7 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.contact': 'Contact',
     'footer.contactInfo': 'Contact Info',
     'footer.kvk': 'KVK',
-    'footer.copyright': '© 2024 NewFutureLab. Alle rechten voorbehouden.',
+    'footer.copyright': '© 2024 JaySolutions. Alle rechten voorbehouden.',
     
     // Services Dropdown
     'servicesDropdown.websites.title': 'Website Ontwikkeling',
@@ -233,7 +233,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.whyDesc2': 'Our team consists of specialists in frontend, backend, UI/UX design and DevOps. Together we ensure that your project is not only technically perfect, but also user-friendly and future-proof.',
     
     // Footer
-    'footer.company': 'NewFutureLab',
+    'footer.company': 'JaySolutions',
     'footer.description': 'Innovative web development for the future. We transform your digital vision into reality with cutting-edge technology and creative solutions.',
     'footer.quickLinks': 'Quick Links',
     'footer.home': 'Home',
@@ -242,7 +242,7 @@ const translations: Record<Language, Record<string, string>> = {
     'footer.contact': 'Contact',
     'footer.contactInfo': 'Contact Info',
     'footer.kvk': 'Chamber of Commerce',
-    'footer.copyright': '© 2024 NewFutureLab. All rights reserved.',
+    'footer.copyright': '© 2024 JaySolutions. All rights reserved.',
     
     // Services Dropdown
     'servicesDropdown.websites.title': 'Website Development',
