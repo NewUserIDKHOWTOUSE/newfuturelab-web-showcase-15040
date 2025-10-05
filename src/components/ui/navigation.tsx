@@ -3,6 +3,7 @@ import { Menu, X, ChevronDown, Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
+import gammaWebLogo from "@/assets/gammaweb-logo.png";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,8 +26,8 @@ export const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="text-2xl font-bold text-gradient hover:scale-105 transition-bounce">
-              GammaWeb
+            <Link to="/" className="flex items-center hover:scale-105 transition-bounce">
+              <img src={gammaWebLogo} alt="GammaWeb" className="h-8 w-auto" />
             </Link>
           </div>
           
