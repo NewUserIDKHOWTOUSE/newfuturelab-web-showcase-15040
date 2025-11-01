@@ -11,6 +11,7 @@ import CRMPage from "./pages/diensten/CRM";
 import SEOPage from "./pages/diensten/SEO";
 import OverOnsPage from "./pages/OverOns";
 import ContactPage from "./pages/Contact";
+import OnsWerkPage from "./pages/OnsWerk";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/diensten/crm" element={<CRMPage />} />
             <Route path="/diensten/seo" element={<SEOPage />} />
             <Route path="/over-ons" element={<OverOnsPage />} />
+            <Route path="/ons-werk" element={<OnsWerkPage />} />
             <Route path="/contact" element={<ContactPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

@@ -168,6 +168,21 @@ const translations: Record<Language, Record<string, string>> = {
     'crm.features.description': 'Alles wat u nodig heeft om uw klantrelaties te optimaliseren en uw verkoop te verhogen',
     'crm.examples.title': 'CRM',
     'crm.examples.highlight': 'Implementaties',
+    
+    // Work/Portfolio page
+    'nav.work': 'Ons Werk',
+    'work.hero.title': 'Ons',
+    'work.hero.highlight': 'Werk',
+    'work.hero.description': 'Bekijk voorbeelden van onze projecten en ontdek hoe wij bedrijven helpen groeien met professionele weboplossingen',
+    'work.hero.specialOffer': 'Speciale korting voor onze eerste 9 klanten - Bouw samen met ons onze portfolio op!',
+    'work.hero.cta': 'Word Early Adopter',
+    'work.hero.services': 'Bekijk Diensten',
+    'work.examples.title': 'Portfolio',
+    'work.examples.subtitle': 'Binnenkort gevuld met onze eerste succesvolle projecten',
+    'work.cta.title': 'Klaar om Samen',
+    'work.cta.highlight': 'Te Groeien?',
+    'work.cta.description': 'Profiteer van exclusieve kortingen als early adopter en krijg een professionele website die écht werkt',
+    'work.cta.button': 'Claim Uw Korting',
   },
   en: {
     // Navigation
@@ -326,6 +341,21 @@ const translations: Record<Language, Record<string, string>> = {
     'crm.features.description': 'Everything you need to optimize your customer relationships and increase your sales',
     'crm.examples.title': 'CRM',
     'crm.examples.highlight': 'Implementations',
+    
+    // Work/Portfolio page
+    'nav.work': 'Our Work',
+    'work.hero.title': 'Our',
+    'work.hero.highlight': 'Work',
+    'work.hero.description': 'View examples of our projects and discover how we help businesses grow with professional web solutions',
+    'work.hero.specialOffer': 'Special discount for our first 9 clients - Build our portfolio together with us!',
+    'work.hero.cta': 'Become Early Adopter',
+    'work.hero.services': 'View Services',
+    'work.examples.title': 'Portfolio',
+    'work.examples.subtitle': 'Soon to be filled with our first successful projects',
+    'work.cta.title': 'Ready to Grow',
+    'work.cta.highlight': 'Together?',
+    'work.cta.description': 'Take advantage of exclusive discounts as an early adopter and get a professional website that truly works',
+    'work.cta.button': 'Claim Your Discount',
   }
 };
 
