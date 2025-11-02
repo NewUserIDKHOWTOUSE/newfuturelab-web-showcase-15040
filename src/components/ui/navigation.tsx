@@ -109,6 +109,14 @@ export const Navigation = () => {
                 {t('nav.work')}
               </Link>
               <Link
+                to="/prijzen"
+                className={`px-3 py-2 text-sm font-medium transition-smooth ${
+                  isActive('/prijzen') ? 'text-gradient' : 'text-foreground hover:text-primary'
+                }`}
+              >
+                {t('nav.pricing')}
+              </Link>
+              <Link
                 to="/contact"
                 className={`px-3 py-2 text-sm font-medium transition-smooth ${
                   isActive('/contact') ? 'text-gradient' : 'text-foreground hover:text-primary'
@@ -192,6 +200,13 @@ export const Navigation = () => {
               onClick={() => setIsOpen(false)}
             >
               {t('nav.work')}
+            </Link>
+            <Link
+              to="/prijzen"
+              className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary transition-smooth"
+              onClick={() => setIsOpen(false)}
+            >
+              {t('nav.pricing')}
             </Link>
             <Link
               to="/contact"
