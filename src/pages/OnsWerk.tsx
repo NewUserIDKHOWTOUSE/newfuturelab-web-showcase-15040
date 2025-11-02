@@ -2,8 +2,11 @@ import { Navigation } from "@/components/ui/navigation";
 import { Footer } from "@/components/ui/footer";
 import { ExamplesSection } from "@/components/ExamplesSection";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
+import { Check, Sparkles, TrendingDown, Star } from "lucide-react";
 
 const OnsWerk = () => {
   const { t } = useLanguage();
@@ -60,8 +63,8 @@ const OnsWerk = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
-            <Link to="/contact">
-              <Button size="lg" className="shadow-elegant hover-scale">
+            <Link to="/prijzen">
+              <Button size="lg" className="shadow-elegant hover-scale bg-gradient-primary">
                 {t('work.hero.cta')}
               </Button>
             </Link>
@@ -70,6 +73,141 @@ const OnsWerk = () => {
                 {t('work.hero.services')}
               </Button>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Portfolio Action Details */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <Card className="border-primary/50 shadow-glow gradient-card">
+            <CardContent className="p-8 md:p-12">
+              <div className="text-center mb-8">
+                <Badge className="mb-4 text-base px-6 py-2 bg-gradient-primary">
+                  {t('pricing.portfolio.badge')}
+                </Badge>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                  {t('pricing.portfolio.title')}
+                </h2>
+              </div>
+              
+              <div className="grid md:grid-cols-3 gap-6 mb-8">
+                <div className="flex items-start gap-3">
+                  <Check className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">{t('pricing.portfolio.benefit1')}</p>
+                    <p className="text-sm text-muted-foreground">Op website of webshop pakketten</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">{t('pricing.portfolio.benefit2')}</p>
+                    <p className="text-sm text-muted-foreground">Gratis bonus bij aanmelding</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Check className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="font-semibold text-foreground mb-1">{t('pricing.portfolio.benefit3')}</p>
+                    <p className="text-sm text-muted-foreground">Extra zichtbaarheid voor uw bedrijf</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-primary/10 border border-primary/30 rounded-lg p-6 text-center mb-6">
+                <p className="text-xl font-bold text-primary mb-2">
+                  <Sparkles className="inline-block mr-2 h-5 w-5" />
+                  {t('pricing.portfolio.counter')}
+                  <Sparkles className="inline-block ml-2 h-5 w-5" />
+                </p>
+                <p className="text-sm text-muted-foreground">{t('pricing.portfolio.urgency')}</p>
+              </div>
+              
+              <p className="text-sm text-muted-foreground text-center max-w-2xl mx-auto mb-6">
+                {t('pricing.portfolio.note')}
+              </p>
+
+              <div className="text-center">
+                <Link to="/prijzen">
+                  <Button size="lg" className="bg-gradient-primary">
+                    Bekijk Alle Pakketten & Prijzen
+                  </Button>
+                </Link>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-16 bg-muted/20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Waarom Kiezen voor <span className="text-gradient">GammaWeb</span>?
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Als portfolio klant krijgt u niet alleen scherpe tarieven, maar ook onze volledige toewijding
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="gradient-card border-border/50 text-center hover:border-primary/50 transition-smooth">
+              <CardContent className="pt-8 pb-6">
+                <div className="flex justify-center mb-4">
+                  <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <TrendingDown className="h-6 w-6 text-primary" />
+                  </div>
+                </div>
+                <h3 className="font-semibold mb-2">Tot 60% Voordeliger</h3>
+                <p className="text-sm text-muted-foreground">
+                  Dan traditionele webontwikkelingsbureaus
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="gradient-card border-border/50 text-center hover:border-primary/50 transition-smooth">
+              <CardContent className="pt-8 pb-6">
+                <div className="flex justify-center mb-4">
+                  <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Star className="h-6 w-6 text-primary" />
+                  </div>
+                </div>
+                <h3 className="font-semibold mb-2">Premium Kwaliteit</h3>
+                <p className="text-sm text-muted-foreground">
+                  Geen concessies aan kwaliteit of functionaliteit
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="gradient-card border-border/50 text-center hover:border-primary/50 transition-smooth">
+              <CardContent className="pt-8 pb-6">
+                <div className="flex justify-center mb-4">
+                  <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Check className="h-6 w-6 text-primary" />
+                  </div>
+                </div>
+                <h3 className="font-semibold mb-2">Geen Verrassingen</h3>
+                <p className="text-sm text-muted-foreground">
+                  Transparante prijzen en duidelijke afspraken
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="gradient-card border-border/50 text-center hover:border-primary/50 transition-smooth">
+              <CardContent className="pt-8 pb-6">
+                <div className="flex justify-center mb-4">
+                  <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Sparkles className="h-6 w-6 text-primary" />
+                  </div>
+                </div>
+                <h3 className="font-semibold mb-2">Extra Voordelen</h3>
+                <p className="text-sm text-muted-foreground">
+                  Gratis SEO-scan of pagina-optimalisatie cadeau
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
