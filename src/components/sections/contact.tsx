@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 export const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -87,18 +88,21 @@ export const ContactSection = () => {
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            {t('contact.title')} <span className="text-gradient">{t('contact.titleHighlight')}</span> {t('contact.subtitle')}
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            {t('contact.description')}
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+              {t('contact.title')} <span className="text-gradient">{t('contact.titleHighlight')}</span> {t('contact.subtitle')}
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              {t('contact.description')}
+            </p>
+          </div>
+        </ScrollReveal>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Information */}
-          <div className="space-y-8">
+          <ScrollReveal delay={200}>
+            <div className="space-y-8">
             <Card className="gradient-card border-border/50">
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-foreground">
@@ -156,10 +160,12 @@ export const ContactSection = () => {
                 </li>
               </ul>
             </div>
-          </div>
+            </div>
+          </ScrollReveal>
           
           {/* Contact Form */}
-          <Card className="gradient-card border-border/50 shadow-card">
+          <ScrollReveal delay={400}>
+            <Card className="gradient-card border-border/50 shadow-card">
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground">
                 {t('contact.form.title')}
@@ -239,6 +245,7 @@ export const ContactSection = () => {
               </form>
             </CardContent>
           </Card>
+          </ScrollReveal>
         </div>
       </div>
     </section>
