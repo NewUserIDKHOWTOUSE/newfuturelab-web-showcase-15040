@@ -41,7 +41,7 @@ const PrijzenPage = () => {
         t('pricing.feature.monitoring'),
         t('pricing.feature.fastResponse'),
       ],
-      badge: t('pricing.badge.popular'),
+      badge: null,
       highlighted: true,
     },
     {
@@ -57,7 +57,7 @@ const PrijzenPage = () => {
         t('pricing.feature.advice'),
         t('pricing.feature.hosting'),
       ],
-      badge: t('pricing.badge.fullservice'),
+      badge: null,
       highlighted: false,
     },
   ];
@@ -91,7 +91,7 @@ const PrijzenPage = () => {
         t('pricing.feature.security'),
         t('pricing.feature.performance'),
       ],
-      badge: t('pricing.badge.popular'),
+      badge: null,
       highlighted: true,
     },
     {
@@ -106,7 +106,7 @@ const PrijzenPage = () => {
         t('pricing.feature.analytics'),
         t('pricing.feature.dedicatedService'),
       ],
-      badge: t('pricing.badge.fullservice'),
+      badge: null,
       highlighted: false,
     },
   ];
