@@ -64,7 +64,7 @@ const OnsWerk = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
             <Link to="/prijzen">
-              <Button size="lg" className="shadow-elegant hover-scale bg-gradient-primary">
+              <Button size="lg" className="shadow-elegant hover-scale bg-gradient-primary text-white">
                 {t('work.hero.cta')}
               </Button>
             </Link>
@@ -130,7 +130,7 @@ const OnsWerk = () => {
 
               <div className="text-center">
                 <Link to="/prijzen">
-                  <Button size="lg" className="bg-gradient-primary">
+                  <Button size="lg" className="bg-gradient-primary text-white">
                     Bekijk Alle Pakketten & Prijzen
                   </Button>
                 </Link>
