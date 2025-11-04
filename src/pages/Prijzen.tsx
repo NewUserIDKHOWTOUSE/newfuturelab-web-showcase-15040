@@ -121,7 +121,7 @@ const PrijzenPage = () => {
           <Card className="border-primary/50 shadow-glow gradient-card animate-in">
             <CardContent className="p-8 md:p-12">
               <div className="text-center mb-8">
-                <Badge className="mb-4 text-base px-6 py-2 bg-gradient-primary animate-pulse">
+                <Badge className="mb-4 text-base px-6 py-2 bg-gradient-primary">
                   <span className="text-gradient font-bold">{t('pricing.portfolio.badge')}</span>
                 </Badge>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">
