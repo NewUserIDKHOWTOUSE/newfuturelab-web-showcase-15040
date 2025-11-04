@@ -171,9 +171,9 @@ const PrijzenPage = () => {
                   {t('pricing.portfolio.counter')}
                   <Sparkles className="inline-block ml-2 h-6 w-6" />
                 </p>
-                <p className="text-sm font-semibold text-foreground mb-4">{t('pricing.portfolio.urgency')}</p>
+                <p className="text-sm font-semibold text-primary mb-4">{t('pricing.portfolio.urgency')}</p>
                 <Link to="/contact">
-                  <Button size="lg" className="bg-gradient-primary text-lg px-8 py-3">
+                  <Button size="lg" className="bg-gradient-primary text-white text-lg px-8 py-3">
                     {t('pricing.portfolio.ctaButton')}
                   </Button>
                 </Link>
