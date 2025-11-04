@@ -124,7 +124,7 @@ const PrijzenPage = () => {
                 <Badge className="mb-4 text-base px-6 py-2 bg-gradient-primary animate-pulse">
                   {t('pricing.portfolio.badge')}
                 </Badge>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">
                   {t('pricing.portfolio.title')}
                 </h2>
               </div>
@@ -173,8 +173,8 @@ const PrijzenPage = () => {
                 </p>
                 <p className="text-sm font-semibold text-primary mb-4">{t('pricing.portfolio.urgency')}</p>
                 <Link to="/contact">
-                  <Button size="lg" className="bg-gradient-primary text-white text-lg px-8 py-3">
-                    {t('pricing.portfolio.ctaButton')}
+                  <Button size="lg" className="bg-gradient-primary text-lg px-8 py-3">
+                    <span className="text-gradient">{t('pricing.portfolio.ctaButton')}</span>
                   </Button>
                 </Link>
               </div>
