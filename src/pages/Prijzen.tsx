@@ -165,7 +165,7 @@ const PrijzenPage = () => {
                 </Card>
               </div>
               
-              <div className="bg-gradient-to-r from-primary/20 to-accent/20 border-2 border-primary/40 rounded-lg p-6 text-center mb-6">
+              <div className="border-2 border-primary rounded-lg p-6 text-center mb-6">
                 <p className="text-2xl md:text-3xl font-bold text-primary mb-2">
                   <Sparkles className="inline-block mr-2 h-6 w-6" />
                   {t('pricing.portfolio.counter')}
@@ -173,8 +173,8 @@ const PrijzenPage = () => {
                 </p>
                 <p className="text-sm font-semibold text-primary mb-4">{t('pricing.portfolio.urgency')}</p>
                 <Link to="/contact">
-                  <Button size="lg" className="bg-gradient-primary text-lg px-8 py-3">
-                    <span className="text-gradient">{t('pricing.portfolio.ctaButton')}</span>
+                  <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 border-2 border-primary shadow-elegant text-lg px-8 py-3">
+                    {t('pricing.portfolio.ctaButton')}
                   </Button>
                 </Link>
               </div>
