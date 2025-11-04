@@ -405,7 +405,7 @@ const PrijzenPage = () => {
             {t('pricing.cta.claim')}
           </h2>
           <Link to="/contact">
-            <Button size="lg" className="bg-gradient-primary text-lg px-8 py-6">
+            <Button size="lg" className="bg-gradient-primary border-2 border-primary text-lg px-8 py-6">
               {t('pricing.cta.contact')}
             </Button>
           </Link>
