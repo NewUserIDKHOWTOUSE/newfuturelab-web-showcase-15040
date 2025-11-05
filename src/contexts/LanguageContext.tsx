@@ -71,7 +71,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.quality': 'Kwaliteit',
     'about.qualityDesc': 'Hoogste kwaliteit code en design standaarden in elk project.',
     'about.whyTitle': 'Waarom kiezen voor GammaWeb?',
-    'about.whyDesc1': 'Met meer dan 10 jaar ervaring in webontwikkeling hebben wij honderden succesvolle projecten opgeleverd. Van startup tot enterprise, wij begrijpen de unieke uitdagingen van elk bedrijf en leveren oplossingen die écht werken.',
+    'about.whyDesc1': 'Met jaren lang aan ervaring in webontwikkeling hebben wij honderden succesvolle projecten opgeleverd. Van startup tot enterprise, wij begrijpen de unieke uitdagingen van elk bedrijf en leveren oplossingen die écht werken.',
     'about.whyDesc2': 'Ons team bestaat uit specialisten in frontend, backend, UI/UX design en DevOps. Samen zorgen wij ervoor dat uw project niet alleen technisch perfect is, maar ook gebruiksvriendelijk en toekomstbestendig.',
     
     // Footer
@@ -321,7 +321,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.quality': 'Quality',
     'about.qualityDesc': 'Highest quality code and design standards in every project.',
     'about.whyTitle': 'Why choose GammaWeb?',
-    'about.whyDesc1': 'With over 10 years of experience in web development, we have delivered hundreds of successful projects. From startup to enterprise, we understand the unique challenges of each business and deliver solutions that truly work.',
+    'about.whyDesc1': 'With years of experience in web development, we have delivered hundreds of successful projects. From startup to enterprise, we understand the unique challenges of each business and deliver solutions that truly work.',
     'about.whyDesc2': 'Our team consists of specialists in frontend, backend, UI/UX design and DevOps. Together we ensure that your project is not only technically perfect, but also user-friendly and future-proof.',
     
     // Footer
