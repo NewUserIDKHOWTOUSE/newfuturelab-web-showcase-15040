@@ -2,6 +2,7 @@ import { Target, Users, Lightbulb, Award } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import OrbitingSkills from "@/components/ui/orbiting-skills";
 
 export const AboutSection = () => {
   const { t } = useLanguage();
@@ -65,6 +66,12 @@ export const AboutSection = () => {
             </ScrollReveal>
           ))}
         </div>
+        
+        <ScrollReveal delay={300}>
+          <div className="flex justify-center mb-16">
+            <OrbitingSkills />
+          </div>
+        </ScrollReveal>
         
         <ScrollReveal delay={400}>
           <div className="max-w-4xl mx-auto text-center">
