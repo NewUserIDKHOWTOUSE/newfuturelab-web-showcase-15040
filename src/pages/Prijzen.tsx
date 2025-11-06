@@ -5,16 +5,19 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Check, Sparkles, TrendingDown } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { Pricing } from "@/components/ui/pricing";
 
 const PrijzenPage = () => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
 
-  const websitePackages = [
+  const websitePlans = [
     {
       name: t('pricing.basic'),
-      priceYear1: '24',
-      priceYear2: '17',
+      price: '24',
+      yearlyPrice: '17',
+      period: 'maand',
       features: [
         t('pricing.buildCosts'),
         t('pricing.feature.hosting'),
@@ -24,13 +27,16 @@ const PrijzenPage = () => {
         t('pricing.feature.troubleshooting'),
         t('pricing.feature.emailSupport'),
       ],
-      badge: null,
-      highlighted: false,
+      description: 'Jaar 1: €24/maand, Jaar 2+: €17/maand',
+      buttonText: t('pricing.cta.start'),
+      href: '/contact',
+      isPopular: false,
     },
     {
       name: t('pricing.plus'),
-      priceYear1: '44',
-      priceYear2: '34',
+      price: '44',
+      yearlyPrice: '34',
+      period: 'maand',
       features: [
         t('pricing.buildCosts'),
         t('pricing.feature.hosting'),
@@ -41,13 +47,16 @@ const PrijzenPage = () => {
         t('pricing.feature.monitoring'),
         t('pricing.feature.fastResponse'),
       ],
-      badge: null,
-      highlighted: true,
+      description: 'Jaar 1: €44/maand, Jaar 2+: €34/maand',
+      buttonText: t('pricing.cta.start'),
+      href: '/contact',
+      isPopular: true,
     },
     {
       name: t('pricing.premium'),
-      priceYear1: '79',
-      priceYear2: '69',
+      price: '79',
+      yearlyPrice: '69',
+      period: 'maand',
       features: [
         t('pricing.feature.247monitoring'),
         t('pricing.feature.devTime60'),
@@ -57,16 +66,19 @@ const PrijzenPage = () => {
         t('pricing.feature.advice'),
         t('pricing.feature.hosting'),
       ],
-      badge: null,
-      highlighted: false,
+      description: 'Jaar 1: €79/maand, Jaar 2+: €69/maand',
+      buttonText: t('pricing.cta.start'),
+      href: '/contact',
+      isPopular: false,
     },
   ];
 
-  const webshopPackages = [
+  const webshopPlans = [
     {
       name: t('pricing.basic'),
-      priceYear1: '44',
-      priceYear2: '32',
+      price: '44',
+      yearlyPrice: '32',
+      period: 'maand',
       features: [
         t('pricing.buildCosts'),
         t('pricing.feature.hosting'),
@@ -76,13 +88,16 @@ const PrijzenPage = () => {
         t('pricing.feature.troubleshooting'),
         t('pricing.feature.emailSupport'),
       ],
-      badge: null,
-      highlighted: false,
+      description: 'Jaar 1: €44/maand, Jaar 2+: €32/maand',
+      buttonText: t('pricing.cta.start'),
+      href: '/contact',
+      isPopular: false,
     },
     {
       name: t('pricing.plus'),
-      priceYear1: '74',
-      priceYear2: '54',
+      price: '74',
+      yearlyPrice: '54',
+      period: 'maand',
       features: [
         t('pricing.buildCosts'),
         t('pricing.feature.dailyBackups'),
@@ -91,13 +106,16 @@ const PrijzenPage = () => {
         t('pricing.feature.security'),
         t('pricing.feature.performance'),
       ],
-      badge: null,
-      highlighted: true,
+      description: 'Jaar 1: €74/maand, Jaar 2+: €54/maand',
+      buttonText: t('pricing.cta.start'),
+      href: '/contact',
+      isPopular: true,
     },
     {
       name: t('pricing.premium'),
-      priceYear1: '129',
-      priceYear2: '109',
+      price: '129',
+      yearlyPrice: '109',
+      period: 'maand',
       features: [
         t('pricing.feature.247monitoring'),
         t('pricing.feature.devTime120'),
@@ -106,8 +124,10 @@ const PrijzenPage = () => {
         t('pricing.feature.analytics'),
         t('pricing.feature.dedicatedService'),
       ],
-      badge: null,
-      highlighted: false,
+      description: 'Jaar 1: €129/maand, Jaar 2+: €109/maand',
+      buttonText: t('pricing.cta.start'),
+      href: '/contact',
+      isPopular: false,
     },
   ];
 
@@ -209,155 +229,23 @@ const PrijzenPage = () => {
       </section>
 
       {/* Website Packages */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              {t('pricing.websites.title')} <span className="text-gradient">{t('pricing.websites.highlight')}</span>
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              {t('pricing.websites.description')}
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {websitePackages.map((pkg, index) => (
-              <Card 
-                key={index} 
-                className={`relative transition-smooth ${
-                  pkg.highlighted 
-                    ? 'border-primary/50 shadow-glow gradient-card scale-105' 
-                    : 'border-border/50 hover:border-primary/30'
-                }`}
-              >
-                {pkg.badge && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <Badge className="bg-gradient-primary text-primary-foreground px-4 py-1">
-                      {pkg.badge}
-                    </Badge>
-                  </div>
-                )}
-                
-                <CardHeader className="text-center pb-4">
-                  <CardTitle className="text-2xl mb-6">{pkg.name}</CardTitle>
-                  <div className="space-y-3">
-                    <div className="bg-primary/10 rounded-lg p-4">
-                      <div className="text-4xl font-bold text-primary mb-1">
-                        €{pkg.priceYear1}
-                        <span className="text-lg text-muted-foreground">{t('pricing.perMonth')}</span>
-                      </div>
-                      <p className="text-sm text-muted-foreground">{t('pricing.year1')}</p>
-                      <p className="text-xs text-primary font-semibold mt-1">{t('pricing.buildCostsIncluded')}</p>
-                    </div>
-                    <div className="pt-2 border-t border-border/50">
-                      <div className="text-2xl font-semibold mb-1">
-                        €{pkg.priceYear2}
-                        <span className="text-sm text-muted-foreground">{t('pricing.perMonth')}</span>
-                      </div>
-                      <p className="text-xs text-muted-foreground">{t('pricing.year2')}</p>
-                    </div>
-                  </div>
-                </CardHeader>
-                
-                <CardContent>
-                  <ul className="space-y-3 mb-6">
-                    {pkg.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <Link to="/contact">
-                    <Button 
-                      className={`w-full ${pkg.highlighted ? 'bg-gradient-primary' : ''}`}
-                      variant={pkg.highlighted ? 'default' : 'outline'}
-                    >
-                      {t('pricing.cta.start')}
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+      <section className="py-4 bg-background">
+        <Pricing 
+          plans={websitePlans}
+          title={t('pricing.websites.title') + ' ' + t('pricing.websites.highlight')}
+          description={t('pricing.websites.description')}
+          onPlanClick={(href) => navigate(href)}
+        />
       </section>
 
       {/* Webshop Packages */}
-      <section className="py-16 bg-muted/20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              {t('pricing.webshops.title')} <span className="text-gradient">{t('pricing.webshops.highlight')}</span>
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              {t('pricing.webshops.description')}
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {webshopPackages.map((pkg, index) => (
-              <Card 
-                key={index} 
-                className={`relative transition-smooth ${
-                  pkg.highlighted 
-                    ? 'border-primary/50 shadow-glow gradient-card scale-105' 
-                    : 'border-border/50 hover:border-primary/30'
-                }`}
-              >
-                {pkg.badge && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <Badge className="bg-gradient-primary text-primary-foreground px-4 py-1">
-                      {pkg.badge}
-                    </Badge>
-                  </div>
-                )}
-                
-                <CardHeader className="text-center pb-4">
-                  <CardTitle className="text-2xl mb-6">{pkg.name}</CardTitle>
-                  <div className="space-y-3">
-                    <div className="bg-primary/10 rounded-lg p-4">
-                      <div className="text-4xl font-bold text-primary mb-1">
-                        €{pkg.priceYear1}
-                        <span className="text-lg text-muted-foreground">{t('pricing.perMonth')}</span>
-                      </div>
-                      <p className="text-sm text-muted-foreground">{t('pricing.year1')}</p>
-                      <p className="text-xs text-primary font-semibold mt-1">{t('pricing.buildCostsIncluded')}</p>
-                    </div>
-                    <div className="pt-2 border-t border-border/50">
-                      <div className="text-2xl font-semibold mb-1">
-                        €{pkg.priceYear2}
-                        <span className="text-sm text-muted-foreground">{t('pricing.perMonth')}</span>
-                      </div>
-                      <p className="text-xs text-muted-foreground">{t('pricing.year2')}</p>
-                    </div>
-                  </div>
-                </CardHeader>
-                
-                <CardContent>
-                  <ul className="space-y-3 mb-6">
-                    {pkg.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <Link to="/contact">
-                    <Button 
-                      className={`w-full ${pkg.highlighted ? 'bg-gradient-primary' : ''}`}
-                      variant={pkg.highlighted ? 'default' : 'outline'}
-                    >
-                      {t('pricing.cta.start')}
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+      <section className="py-4 bg-muted/20">
+        <Pricing 
+          plans={webshopPlans}
+          title={t('pricing.webshops.title') + ' ' + t('pricing.webshops.highlight')}
+          description={t('pricing.webshops.description')}
+          onPlanClick={(href) => navigate(href)}
+        />
       </section>
 
       {/* Benefits Section */}
