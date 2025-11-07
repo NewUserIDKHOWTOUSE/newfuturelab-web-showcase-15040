@@ -85,6 +85,21 @@ export const ServicesSection = () => {
       icon: Palette,
       titleKey: "service.uiux",
       descKey: "service.uiuxDesc"
+    },
+    {
+      icon: Monitor,
+      titleKey: "service.hosting",
+      descKey: "service.hostingDesc"
+    },
+    {
+      icon: Globe,
+      titleKey: "service.migration",
+      descKey: "service.migrationDesc"
+    },
+    {
+      icon: Zap,
+      titleKey: "service.performance",
+      descKey: "service.performanceDesc"
     }
   ];
   return (

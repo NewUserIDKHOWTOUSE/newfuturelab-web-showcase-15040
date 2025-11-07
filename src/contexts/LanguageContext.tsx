@@ -57,6 +57,12 @@ const translations: Record<Language, Record<string, string>> = {
     'service.maintenanceDesc': 'Doorlopend onderhoud en updates om uw website optimaal te laten functioneren.',
     'service.uiux': 'UI/UX Design',
     'service.uiuxDesc': 'Intuïtieve en aantrekkelijke designs die gebruikers een geweldige ervaring bieden.',
+    'service.hosting': 'Hosting & Beheer',
+    'service.hostingDesc': 'Betrouwbare hosting oplossingen met continue monitoring en beheer.',
+    'service.migration': 'Website Migratie',
+    'service.migrationDesc': 'Veilige overdracht van uw bestaande website naar moderne technologie.',
+    'service.performance': 'Performance Optimalisatie',
+    'service.performanceDesc': 'Snelheidsoptimalisatie voor betere gebruikerservaring en SEO.',
     
     // About
     'about.title': 'Over',
@@ -307,6 +313,12 @@ const translations: Record<Language, Record<string, string>> = {
     'service.maintenanceDesc': 'Ongoing maintenance and updates to keep your website running optimally.',
     'service.uiux': 'UI/UX Design',
     'service.uiuxDesc': 'Intuitive and attractive designs that provide users with a great experience.',
+    'service.hosting': 'Hosting & Management',
+    'service.hostingDesc': 'Reliable hosting solutions with continuous monitoring and management.',
+    'service.migration': 'Website Migration',
+    'service.migrationDesc': 'Safe transfer of your existing website to modern technology.',
+    'service.performance': 'Performance Optimization',
+    'service.performanceDesc': 'Speed optimization for better user experience and SEO.',
     
     // About
     'about.title': 'About',
