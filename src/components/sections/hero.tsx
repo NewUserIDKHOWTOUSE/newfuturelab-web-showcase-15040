@@ -15,9 +15,10 @@ export const HeroSection = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-16 gradient-hero overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-accent/10 to-primary/20 animate-pulse" style={{ animationDuration: '8s' }}></div>
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '6s', animationDelay: '1s' }}></div>
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-accent/15 rounded-full blur-[140px] animate-pulse" style={{ animationDuration: '7s', animationDelay: '2s' }}></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-600/20 via-cyan-500/10 to-fuchsia-600/20 animate-pulse" style={{ animationDuration: '8s' }}></div>
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-600/25 rounded-full blur-[120px] animate-pulse" style={{ animationDuration: '6s', animationDelay: '1s' }}></div>
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-fuchsia-500/20 rounded-full blur-[140px] animate-pulse" style={{ animationDuration: '7s', animationDelay: '2s' }}></div>
+      <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] -translate-x-1/2 -translate-y-1/2 bg-cyan-500/15 rounded-full blur-[100px] animate-pulse" style={{ animationDuration: '9s', animationDelay: '0.5s' }}></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal>
