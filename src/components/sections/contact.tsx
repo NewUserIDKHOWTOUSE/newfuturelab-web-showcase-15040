@@ -86,7 +86,10 @@ export const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-background">
+    <section id="contact" className="relative py-20 gradient-contact overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-accent/10"></div>
+      <div className="absolute top-20 left-10 w-[400px] h-[400px] bg-primary/15 rounded-full blur-[100px]"></div>
+      <div className="absolute bottom-20 right-10 w-[350px] h-[350px] bg-accent/12 rounded-full blur-[90px]"></div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center mb-16">

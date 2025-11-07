@@ -39,14 +39,15 @@ All colors MUST be HSL.
     --radius: 0.75rem;
 
     /* Enhanced design tokens for GammaWeb */
-    --gradient-primary: linear-gradient(135deg, hsl(240 100% 70%), hsl(260 100% 80%));
-    --gradient-secondary: linear-gradient(135deg, hsl(280 100% 75%), hsl(300 100% 85%));
-    --gradient-hero: linear-gradient(135deg, hsl(220 26% 8%), hsl(240 30% 15%));
-    --gradient-card: linear-gradient(145deg, hsl(220 26% 18%), hsl(240 26% 22%));
-    --gradient-accent: linear-gradient(90deg, hsl(240 100% 70%), hsl(260 100% 80%));
-    --shadow-glow: 0 0 40px hsl(240 100% 70% / 0.4);
-    --shadow-card: 0 10px 30px -10px hsl(220 26% 8% / 0.9);
-    --shadow-elegant: 0 25px 50px -12px hsl(240 100% 70% / 0.25);
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(240 100% 65%) 50%, hsl(260 95% 70%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(280 100% 65%) 0%, hsl(300 100% 70%) 50%, hsl(320 95% 75%) 100%);
+    --gradient-hero: radial-gradient(ellipse at top, hsl(240 80% 25%) 0%, hsl(220 70% 12%) 50%, hsl(220 26% 8%) 100%);
+    --gradient-card: radial-gradient(circle at top right, hsl(240 60% 20%) 0%, hsl(220 40% 16%) 50%, hsl(220 26% 18%) 100%);
+    --gradient-accent: linear-gradient(90deg, hsl(217 91% 60%) 0%, hsl(197 100% 64%) 50%, hsl(217 91% 60%) 100%);
+    --gradient-contact: radial-gradient(ellipse at bottom, hsl(217 80% 20%) 0%, hsl(220 60% 14%) 50%, hsl(220 26% 14%) 100%);
+    --shadow-glow: 0 0 60px hsl(217 91% 60% / 0.6), 0 0 120px hsl(240 100% 65% / 0.3);
+    --shadow-card: 0 20px 60px -15px hsl(217 91% 60% / 0.4), 0 10px 30px -10px hsl(220 26% 8% / 0.9);
+    --shadow-elegant: 0 25px 80px -20px hsl(217 91% 60% / 0.5), 0 10px 40px -10px hsl(240 100% 65% / 0.3);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
@@ -135,6 +136,10 @@ All colors MUST be HSL.
   
   .gradient-accent {
     background: var(--gradient-accent);
+  }
+  
+  .gradient-contact {
+    background: var(--gradient-contact);
   }
   
   .shadow-glow {
